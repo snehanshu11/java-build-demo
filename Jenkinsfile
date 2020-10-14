@@ -4,15 +4,15 @@ pipeline
 
   stages
   {
-    stage("test1")
+    stage("Build")
     {
       steps
       {
-        sh "date"
+        sh "maven clean install"
       }
     }
 
-    stage("test2")
+    stage("Test")
     {
       steps
       {
