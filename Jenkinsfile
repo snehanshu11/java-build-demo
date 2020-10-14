@@ -16,7 +16,19 @@ pipeline
     {
       steps
       {
-        sh "hostname "
+        sh """
+        echo "Testing scripts will be placed here."
+        """
+      }
+    }
+    
+    stage("Build Dcoker-image")
+    {
+      steps
+      {
+        sh """
+        echo "Building Docker Image"
+           """
       }
     }
 
