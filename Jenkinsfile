@@ -1,16 +1,24 @@
-pipeline{
-agent any 
-stages{
-stage("test1"){
-steps{
-sh "date"}
-}
+pipeline
+{
+  agent any 
 
-stage("test2"){
-steps{
-sh "hostname "
-}
-}
+  stages
+  {
+    stage("test1")
+    {
+      steps
+      {
+        sh "date"
+      }
+    }
 
-}
+    stage("test2")
+    {
+      steps
+      {
+        sh "hostname "
+      }
+    }
+
+  }
 }
