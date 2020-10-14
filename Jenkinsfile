@@ -8,7 +8,7 @@ pipeline
     {
       steps
       {
-        sh "maven clean install"
+        sh "mvn clean install"
       }
     }
 
