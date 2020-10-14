@@ -1,18 +1,18 @@
 pipeline{
 agent any 
 stages{
-steps{
-step("test1"){
+stage{
+steps("test1"){
 
 }
 
-step("test2"){
+steps("test2"){
 }
 
 parallel{
-step("test3"){
+steps("test3"){
 }
-step("test4")
+steps("test4")
 }
 }
 }
