@@ -37,7 +37,7 @@ pipeline
       steps
       {
         sh "echo 'Uploading the image to GCR'"
-        withDockerRegistry([credentialsId: "e672e8c0-1253-49b2-9390-a242e86703c5" , url: "https://hub.docker.com"])
+        withDockerRegistry([credentialsId: "docker" , url: "https://hub.docker.com"])
           {
           sh "docker push snehanshu11/my-app:1.0-SNAPSHOT" 
           }
