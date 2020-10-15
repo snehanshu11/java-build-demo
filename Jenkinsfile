@@ -1,17 +1,11 @@
 pipeline
 {
   agent any 
-      parameters {
-        activeChoiceParam('CHOICE-1') {
-            description('Allows user choose from multiple choices')
-            filterable()
-            choiceType('SINGLE_SELECT')
-            groovyScript {
-                script('["choice1", "choice2"]')
-                fallbackScript('"fallback choice"')
-            }
-        }
-    }
+  parameters 
+  {
+    booleanParam(defaultValue: true, name: 'Build', description: 'Build the code'),
+    booleanParam(defaultValue: false, name: 'Deploy', description: 'Deploy the code'),
+   }
   stages
   {
     stage("Build")
