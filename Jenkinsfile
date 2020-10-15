@@ -9,7 +9,7 @@ pipeline
    }
   environment
   {
-    DEPLOY_ENV=${params.DEPLOY_ENV} 
+    DEPLOY_ENV=params.DEPLOY_ENV
   }
   stages
   {
