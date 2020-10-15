@@ -28,7 +28,7 @@ pipeline
       {
         sh """
         echo "Building Docker Image"
-        docker build -t snehanshu/my-app:1.0-SNAPSHOT
+        docker build -t snehanshu/my-app:1.0-SNAPSHOT .
            """
       }
     }
