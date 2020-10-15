@@ -1,7 +1,17 @@
 pipeline
 {
   agent any 
-  parameters { choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: '') }
+      parameters {
+        activeChoiceParam('CHOICE-1') {
+            description('Allows user choose from multiple choices')
+            filterable()
+            choiceType('SINGLE_SELECT')
+            groovyScript {
+                script('["choice1", "choice2"]')
+                fallbackScript('"fallback choice"')
+            }
+        }
+    }
   stages
   {
     stage("Build")
