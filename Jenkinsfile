@@ -2,7 +2,7 @@ pipeline
 {
   agent any 
     parameters {
-        choiceParam('Opeartions', ['Build (default)', 'Deploy'], 'What do you want to do?')
+        choice('Opeartions', ['Build (default)', 'Deploy'], 'What do you want to do?')
     }
   stages
   {
