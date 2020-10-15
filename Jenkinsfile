@@ -45,5 +45,14 @@ pipeline
       }
     }
 
+    stage("Kubernetes Deployment")
+    {
+      steps
+      {
+        sh """
+        echo "Kubernetes Deployment will happen now."
+        """
+      }
+    }    
   }
 }
