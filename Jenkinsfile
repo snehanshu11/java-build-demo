@@ -10,6 +10,13 @@ pipeline
   {
     stage("Build")
     {
+      when
+      {
+        expression 
+        {
+          params.name == "Build"
+        }
+      }
       steps
       {
         sh "mvn clean install"
@@ -18,6 +25,13 @@ pipeline
 
     stage("Test")
     {
+      when
+      {
+        expression 
+        {
+          params.name == "Build"
+        }
+      }      
       steps
       {
         sh """
@@ -28,6 +42,13 @@ pipeline
     
     stage("Build Docker Image")
     {
+      when
+      {
+        expression 
+        {
+          params.name == "Build"
+        }
+      }      
       steps
       {
         sh """
@@ -38,6 +59,13 @@ pipeline
     }
     stage("Docker Image upload")
     {
+      when
+      {
+        expression 
+        {
+          params.name == "Build"
+        }
+      }      
       steps
       {
         sh "echo 'Uploading the image to GCR'"
