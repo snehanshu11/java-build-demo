@@ -14,7 +14,7 @@ pipeline
       {
         expression 
         {
-          params.name == "Build"
+          params.name("Build") == true
         }
       }
       steps
