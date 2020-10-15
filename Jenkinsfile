@@ -49,9 +49,15 @@ pipeline
     {
       steps
       {
-        sh """
-        echo "Kubernetes Deployment will happen now."
-        """
+        sh "echo 'Kubernetes Deployment will happen now.'"
+        withDockerRegistry([credentialsId: "docker" , url: ""])
+          {
+          sh "docker pull snehanshu11/my-app:1.0-SNAPSHOT" 
+          }
+        sh "gcloud container clusters get-credentials cluster-1 --zone us-central1-c --project my-project-40222"
+        sh "kubectl apply -f deployment.yaml"
+        sh "kubectl get deployments"
+        sh "kubectl get services"
       }
     }    
   }
