@@ -55,7 +55,7 @@ pipeline
       {
         expression 
         {
-          params.name="Deploy"
+          params.name == "Deploy"
         }
       }
       steps
