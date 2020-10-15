@@ -48,9 +48,16 @@ pipeline
           
       }
     }
-
+    
     stage("Kubernetes Deployment")
     {
+      when
+      {
+        expression 
+        {
+          params.name="Deploy"
+        }
+      }
       steps
       {
         sh "echo 'Kubernetes Deployment will happen now.'"
