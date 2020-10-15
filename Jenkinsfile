@@ -32,6 +32,15 @@ pipeline
            """
       }
     }
+    stage("Docker Image upload")
+    {
+      steps
+      {
+        sh """
+        echo "Uploadaing the image to GCR"
+           """
+      }
+    }
 
   }
 }
