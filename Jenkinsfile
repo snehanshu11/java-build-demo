@@ -28,8 +28,7 @@ pipeline
       {
         sh """
         echo "Building Docker Image"
-        cp /root/.m2/repository/com/mycompany/app/my-app/1.0-SNAPSHOT/my-app-1.0-SNAPSHOT.jar .
-        docker build --build-arg JAR_FILE=my-app-1.0-SNAPSHOT.jar
+        docker build -t snehanshu/my-app:1.0-SNAPSHOT
            """
       }
     }
