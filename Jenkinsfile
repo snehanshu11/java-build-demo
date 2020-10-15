@@ -29,7 +29,7 @@ pipeline
       {
         expression 
         {
-          params.name == "Build"
+          params.Build == true
         }
       }      
       steps
@@ -46,7 +46,7 @@ pipeline
       {
         expression 
         {
-          params.name == "Build"
+          params.Build == true
         }
       }      
       steps
@@ -63,7 +63,7 @@ pipeline
       {
         expression 
         {
-          params.name == "Build"
+          params.Build == true
         }
       }      
       steps
@@ -83,7 +83,7 @@ pipeline
       {
         expression 
         {
-          params.name == "Deploy"
+          params.Deploy == true
         }
       }
       steps
