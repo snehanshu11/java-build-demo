@@ -5,7 +5,12 @@ pipeline
   {
     booleanParam(defaultValue: true, name: 'Build', description: 'Build the code')
     booleanParam(defaultValue: false, name: 'Deploy', description: 'Deploy the code')
+    string(name: 'DEPLOY_ENV', defaultValue: 'Dev', description: '')
    }
+  environment
+  {
+    DEPLOY_ENV=${params.DEPLOY_ENV} 
+  }
   stages
   {
     stage("Build")
@@ -88,7 +93,7 @@ pipeline
       }
       steps
       {
-        sh "echo 'Kubernetes Deployment will happen now.'"
+        sh "echo 'Kubernetes Deployment will happen now in ${env.DEPLOY_ENV}'"
         withDockerRegistry([credentialsId: "docker" , url: ""])
           {
           sh "docker pull snehanshu11/my-app:1.0-SNAPSHOT" 
