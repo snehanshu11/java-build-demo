@@ -28,7 +28,7 @@ pipeline
       {
         sh """
         echo "Building Docker Image"
-        docker build -t snehanshu/my-app:1.0-SNAPSHOT .
+        docker build -t snehanshu11/my-app:1.0-SNAPSHOT .
            """
       }
     }
@@ -37,7 +37,7 @@ pipeline
       steps
       {
         sh """
-        echo "Uploadaing the image to GCR"
+        echo "Uploading the image to GCR"
            """
       }
     }
